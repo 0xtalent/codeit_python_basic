@@ -95,3 +95,43 @@ while sido >= 1:
 
 if sido == 0:
     print("아쉽습니다. 정답은 {}였습니다.".format(ANSWER))
+
+# 채점 피드백
+# 1. sido 와 같이 한글발음으로 이루어진 영단어보다는 tries라든지
+# 온전한 영어단어로 써주시면 좀 더 좋은 선택이 될 것 같습니다:)
+# 2. sido -= 1이 중복되는데 한번만 쓸 수도 있지 않을까요?
+# 3.(5 - sido)와 같이 한칸 띄어 써주시면 더 좋은 코드가 될 것입니다.
+# 이 부분만 다시 한번 확인해보시고 해설을 참고해주세요:) 수고하셨습니다^^
+
+# 출제자님은 어떻게 푸셨는지
+
+"""
+from random import randint
+
+# 상수
+NUM_TRIES = 4
+ANSWER = randint(1, 20)
+
+# 변수
+tries = 0
+guess = -1
+
+# 시도가 남았고 아직 답을 못 맞췄을 경우
+while tries < NUM_TRIES and guess != ANSWER:
+    guess = int(input("기회가 %d번 남았습니다. 1-20 사이의 숫자를 맞춰보세요: " % (NUM_TRIES - tries)))
+    tries = tries + 1
+
+    if guess < ANSWER:
+        print("Up")
+    elif guess > ANSWER:
+        print("Down")
+
+# while 반복문에서 나오게 되면 두 가지 경우가 있습니다.
+# 답을 맞춰서 나왔거나 아니면 그 시도가 이제 더 이상 남지 않아서 나왔거나
+
+if guess == ANSWER:
+    print("축하합니다. %d번만에 숫자를 맞추셨습니다." % (tries))
+else:
+    print("아쉽습니다. 정답은 %d였습니다." % (ANSWER))
+
+"""
