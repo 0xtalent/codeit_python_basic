@@ -319,16 +319,30 @@ while strike < 3:
     # tries = 0
 
     # 1) 입력 2) 중복 메시지 3) 0 ~ 9 범위 경고 메시지
+    #
+    # while len(guesses) < 3:
+    #     guess = int(input("{}번째 수를 입력하세요: ".format(len(guesses) + 1)))
+    #
+    #     if guess in guesses:
+    #         print("중복되는 수 입니다. 다시 입력해주세요.")
+    #
+    #     if guess < 0 or 9 < guess:
+    #         print("범위를 벗어나는 수입니다. 다시 입력해주세요.")
+    #
+    #     guesses.append(guess)
+
+# 수정
     while len(guesses) < 3:
         guess = int(input("{}번째 수를 입력하세요: ".format(len(guesses) + 1)))
 
         if guess in guesses:
             print("중복되는 수 입니다. 다시 입력해주세요.")
 
-        if guess < 0 or 9 < guess:
+        elif guess < 0 or 9 < guess:
             print("범위를 벗어나는 수입니다. 다시 입력해주세요.")
 
-        guesses.append(guess)
+        else:
+            guesses.append(guess)
 
     # 스트라이크랑 볼 세기
     while strike_and_ball < 3:

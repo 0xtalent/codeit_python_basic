@@ -90,4 +90,82 @@ for i in range(1, 10):
 # 기업에서 코딩테스트를 보는 이유가 있어
 # 더 열심히 하자 ! 의대생처럼 공부!!
 
-# 피타고라스 수
+# 피타고라스 수 문제
+
+for a in range(1, 1000):
+    for b in range(1, 1000):
+        c = 1000 - a - b
+        if a * a +  b * b == c * c and a < b < c:
+            print(a * b * c)
+
+# Aliasing(Alias: 가명)
+
+# 리스트 뒤집기 문제
+"""
+numbers = [2, 4, 6, 8, 10, 12, 14]
+
+# 리스트 뒤집기
+for i in numbers:
+    temp = i
+    i = len(numbers) - i - 1
+    len(numbers) - i - 1 = i
+print("뒤집어진 리스트: " + str(numbers))
+#
+# temp?
+"""
+numbers = [2, 4, 6, 8, 10, 12, 14]
+
+# 리스트 뒤집기
+for left in range(int(len(numbers) * 1/2)):
+    temp = numbers[left]
+    numbers[left] = numbers[len(numbers) - left - 1]
+    numbers[len(numbers) - left - 1] = temp
+
+print("뒤집어진 리스트: " + str(numbers))
+
+# 좋은 팁
+
+# left가 리스트 전체의 길이의 범위로 지정되어있어서,
+# 전반부의 원소와 후반부의 원소가 한 번 교체된 후, 또 다시 교체되어 원 상태로 돌아온 것입니다.
+# left의 범위를 리스트 길의의 절반으로 제한해주어야 합니다.
+
+# 실수 한 거
+# 위치값 지정해 주기 위해서 range 함수 써서 해결해야 했었는데
+# 이상하게 하려 했음
+
+# 리스트와 문자열 정리
+"""
+인덱싱 (Indexing)
+두 자료형은 공통적으로 인덱싱이 가능합니다.
+
+for 반복문
+두 자료형은 공통적으로 인덱싱이 가능합니다. 따라서 for 반복문에도 활용할 수 있습니다.
+
+슬라이싱 (Slicing)
+두 자료형은 공통적으로 슬라이싱이 가능합니다.
+
+len 함수
+두 자료형은 모두 길이를 재는 len 함수를 쓸 수 있습니다.
+
+Mutable (수정 가능) vs. Immutable (수정 불가능)
+하지만 차이점이 있습니다. 리스트는 데이터를 바꿀 수 있지만,
+문자열은 데이터를 바꿀 수 없다는 것입니다.
+리스트와 같이 수정 가능한 자료형을 'mutable'한 자료형이라고 부르고,
+문자열과 같이 수정 불가능한 자료형을 'immutable'한 자료형이라고 부릅니다.
+숫자, 불린, 문자열은 모두 immutable한 자료형입니다.
+"""
+
+# 자리수 합 구하기 문제
+
+# 자리수 합 리턴
+def sum_digit(num):
+    sum_digit % 10
+
+# sum_digit(1)부터 sum_digit(1000)까지의 합 구하기
+# 코드를 입력하세요.
+
+# 10의 자리로 나눠서
+# 몫, 나머지로 잘 해내면 될 듯?
+
+# 하기 싫어
+# 일단 여기까지 하고 다음 챕터로 갑니다.
