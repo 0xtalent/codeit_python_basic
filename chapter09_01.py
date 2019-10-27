@@ -65,7 +65,3 @@ print("1 2 3 4 5 6".split())
 """
 
 # 코딩에 빠진 닭
-
-for line in in_file:
-    data = line.strip().split(": ")
-    amount = int(data[1])
