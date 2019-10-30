@@ -1,5 +1,5 @@
-# fastcampus05-1
-# fileIO, exception, git, process, thread
+# fastcampus06-1
+# fileIO, exception, git
 
 import sys
 import io
