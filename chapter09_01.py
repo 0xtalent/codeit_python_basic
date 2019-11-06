@@ -65,3 +65,19 @@ print("1 2 3 4 5 6".split())
 """
 
 # 코딩에 빠진 닭
+
+amount = 0
+days = 0
+
+in_file = open('data/chicken.txt', 'r')
+
+for line in in_file:
+    data = line.strip().split(": ")
+    amount = amount + int(data[1])
+    days += 1
+
+print(amount / days)
+
+in_file.close()
+
+# strip과 split을 스스로 섞어 쓸 수 있을까?
