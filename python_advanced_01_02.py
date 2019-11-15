@@ -71,3 +71,46 @@ studt2.detail_info()
 속성에서 인스턴스 변수는 내꺼
 클래스 변수는 모두가 공유한다
 """
+print()
+print()
+Student.detail_info(studt1)
+
+# 비교
+print()
+print()
+print(studt1.__class__, studt2.__class__)
+print(id(studt1.__class__) == id(studt2.__class__))
+
+# 인스턴스 변수
+# 직접 접근(PEP 문법적으로 권장 x)
+"""
+studt1._name = 'HAHAHA'
+print(studt1._name)
+"""
+print(studt1._name, studt2._name)
+print(studt1._email, studt2._email)
+
+# 클래스 변수
+
+# 접근
+print()
+
+print(studt1.student_count)
+print(studt2.student_count)
+print(Student.student_count)
+
+print()
+
+# 공유가 진짜 되어 있는지 확인
+print(Student.__dict__)
+print(studt1.__dict__)
+print(studt2.__dict__)
+
+"""
+인스턴스 네임스페이스에 없으면 상위에서 검색한다
+즉, 동일한 이름으로 변수 생성 가능(인스턴스 검색 후 -> 상위(클래스 변수, 부모 클래스 변수))
+"""
+
+del studt2
+print(studt1.student_count)
+print(Student.student_count)
