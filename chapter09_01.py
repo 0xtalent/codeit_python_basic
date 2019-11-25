@@ -65,19 +65,44 @@ print("1 2 3 4 5 6".split())
 """
 
 # 코딩에 빠진 닭
-
-amount = 0
-days = 0
-
-in_file = open('data/chicken.txt', 'r')
-
-for line in in_file:
-    data = line.strip().split(": ")
-    amount = amount + int(data[1])
-    days += 1
-
-print(amount / days)
-
-in_file.close()
+#
+# amount = 0
+# days = 0
+#
+# in_file = open('data/chicken.txt', 'r')
+#
+# for line in in_file:
+#     data = line.strip().split(": ")
+#     amount = amount + int(data[1])
+#     days += 1
+#
+# print(amount / days)
+#
+# in_file.close()
 
 # strip과 split을 스스로 섞어 쓸 수 있을까?
+
+# 2019-11-25
+
+# 파일쓰기
+"""
+out_file = open('new_file.txt', 'w')
+그리고 파일에 쓰려면 out_file에 write 메소드를 불러주면 됩니다.
+엔터를 치기 위해서는 Newline Character("\n") 넣어주는 것도 잊지 마시고요.
+그리고 파일을 읽을 때와 마찬가지로 파일을 다 쓰면 꼭 닫아주는 것이 좋습니다.
+out_file.close()
+"""
+
+# 단어장 만들기 문제
+import codecs
+# 파일 쓸수있게 open
+out_file = codecs.open('vocabulary.txt', 'w')
+
+# q가 입력되기 전까지 ㄱㄱ
+while True:
+    english_word = input("영어 단어를 입력하세요: ")
+    if english_word == "q":
+        break
+    else:
+        korean_meaning = input("한국어 뜻을 입력하세요: ")
+        out_file.write("{}: {}\n".format(english_word, korean_meaning))
