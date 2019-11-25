@@ -154,18 +154,65 @@ Mutable (수정 가능) vs. Immutable (수정 불가능)
 문자열과 같이 수정 불가능한 자료형을 'immutable'한 자료형이라고 부릅니다.
 숫자, 불린, 문자열은 모두 immutable한 자료형입니다.
 """
-
+print()
 # 자리수 합 구하기 문제
 
 # 자리수 합 리턴
 def sum_digit(num):
-    sum_digit % 10
+    str_num = str(num)
+    sum = 0
+    for i in str_num:
+        sum = sum + int(i)
+    return(sum)
 
 # sum_digit(1)부터 sum_digit(1000)까지의 합 구하기
-# 코드를 입력하세요.
+i = 1
+j = 0
+while i <= 1000:
+    j += sum_digit(i)
+    i += 1
+print(j)
 
-# 10의 자리로 나눠서
-# 몫, 나머지로 잘 해내면 될 듯?
+# 정답
+"""
+for문으로 했넹
 
-# 하기 싫어
-# 일단 여기까지 하고 다음 챕터로 갑니다.
+total = 0
+for i in range(1, 1001):
+    total = total + sum_digit(i)
+print(total)
+"""
+
+# 주민등록번호 가리기 문제
+
+def mask_security_number(security_number):
+    return(security_number[0: - 4] + "****")
+
+print(mask_security_number("880720-1234567"))
+print(mask_security_number("8807201234567"))
+print(mask_security_number("930124-7654321"))
+print(mask_security_number("9301247654321"))
+print(mask_security_number("761214-2357111"))
+print(mask_security_number("7612142357111"))
+
+print()
+
+# 필린드롬 문제
+# 모르겠엉 너무 어려웡
+# 정답은 뭘까? 바로 해설 ㄱㄱ
+
+def is_palindrome(word):
+    for left in range(len(word) // 2):
+        # 한 쌍이라도 일치하지 않으면 바로 False를 리턴하고 함수를 끝냄
+        right = len(word) - left - 1
+        if word[left] != word[right]:
+            return False
+
+    # for문에서 나왔다면 모든 쌍이 일치
+    return True
+
+print(is_palindrome("racecar"))
+print(is_palindrome("stars"))
+print(is_palindrome("토마토"))
+print(is_palindrome("kayak"))
+print(is_palindrome("hello"))
