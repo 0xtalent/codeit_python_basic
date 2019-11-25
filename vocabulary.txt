@@ -1,3 +1,8 @@
-apple: 사과
-banana: 바나나
-peach: 복숭아
+고양이 cat
+사과 apple
+교회 church
+절 temple
+지갑 wallet
+책가방 backpack
+비누 soap
+자전거 bicycle
