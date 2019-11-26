@@ -1,4 +1,4 @@
-# Chapter01-2
+# Chapter01-3
 # 파이썬 심화
 # 클래스 메소드, 인스턴스 메소드, 스테이틱 메소드
 
@@ -38,3 +38,12 @@ class Student(object):
         # Instance Method
         def get_fee_culc(Self):
             return 'After Tuition -> ID : {}, fee : {}'.format(self._id, self._tuition * Student.tuition)
+
+        def __str__(self):
+            return 'Student Info -> name: {} grade: {} email: {}'.format(self.full_name(), self._grade, self._email)
+
+student_1 = Student(1, 'Kim', 'Sarang', 'student1@naver.com', '1', 400, 3.5)
+student_2 = Student(2, 'Lee', 'Myungho', 'student2@naver.com', '2', 500, 4.3)
+
+print(student_1)
+print(student_2)
