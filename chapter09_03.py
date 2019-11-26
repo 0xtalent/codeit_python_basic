@@ -113,3 +113,4 @@ word_list.close()
 # 앜ㅋ randint(0, 5) 가 4까지 인줄 알았네ㅋㅋㅋ이거 그거 아니야
 # 아 그리고 20분 고민한 듯, word_jang["word_jang_keys[random_numbers]"]
 # 이렇게 했는데 안되서 한참 고민했는데 "" 없애니까 되네...
+# 이유는 word_jang_keys[random_numbers] 이게 나올 때 "어쩌구"로 나올 듯?
