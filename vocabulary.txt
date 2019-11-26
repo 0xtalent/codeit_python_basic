@@ -1,8 +1,5 @@
-고양이 cat
-사과 apple
-교회 church
-절 temple
-지갑 wallet
-책가방 backpack
-비누 soap
-자전거 bicycle
+banana 바나나
+apple 사과
+pineapple 파인애플
+hat 모자
+kiwi 키위
