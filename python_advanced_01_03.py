@@ -58,6 +58,10 @@ class Student(object):
         cls.tuition_per = per
         print("인상되었습니다")
 
+    # Class classmethod
+    @classmethod
+    def student_const(cls, id, first_name, last_name, email, grade, tuition, gpa):
+        return cls(id, first_name, last_name, email, grade, tuition * cls.tuition_per, gpa)
 
 # 학생 인스턴스
 student_1 = Student(1, 'Kim', 'Sarang', 'student1@naver.com', '1', 400, 3.5)
@@ -85,3 +89,17 @@ Student.raise_fee(1.2)
 # 학비 정보(등록금 인상 후)
 print(student_1.get_fee_culc())
 print(student_2.get_fee_culc())
+print()
+
+# 클래스 메소드 인스턴스 생성 실습
+student_3 = Student.student_const(3, 'Park', 'Minji', 'Student3@gmail.com', '3', 550, 4.5)
+student_4 = Student.student_const(4, 'Jung', 'Hayong', 'superhayong@naver.com', '4', 600, 4.1)
+
+# 전체 정보 출력
+print(student_3.detail_info())
+print(student_4.detail_info())
+print()
+
+# 학생 학비 변경 확인
+print(student_3._tuition)
+print(student_4._tuition)
