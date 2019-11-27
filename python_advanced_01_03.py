@@ -12,7 +12,7 @@ class Student(object):
     Description : Class, Static, Instance Method
     """
     # Class Variable
-    tuition = 1.0
+    tuition_per = 1.0
 
     def __init__(self, id, first_name, last_name, email, grade, tuition, gpa):
         self._id = id
@@ -36,14 +36,33 @@ class Student(object):
         return 'Before Tuition -> ID : {}, fee : {}'.format(self._id, self._tuition)
 
     # Instance Method
-    def get_fee_culc(Self):
-        return 'After Tuition -> ID : {}, fee : {}'.format(self._id, self._tuition * Student.tuition)
+    def get_fee_culc(self):
+        return 'After Tuition -> ID : {}, fee : {}'.format(self._id, self._tuition * Student.tuition_per)
 
     def __str__(self):
         return 'Student Info -> name: {} grade: {} email: {}'.format(self.full_name(), self._grade, self._email)
 
+# 학생 인스턴스
 student_1 = Student(1, 'Kim', 'Sarang', 'student1@naver.com', '1', 400, 3.5)
 student_2 = Student(2, 'Lee', 'Myungho', 'student2@naver.com', '2', 500, 4.3)
 
+# 기본 정보 출력
 print(student_1)
 print(student_2)
+print()
+
+# 전체 정보
+print(student_1.detail_info())
+print(student_2.detail_info())
+
+# 학비 정보(등록금 인상 전)
+print(student_1.get_fee())
+print(student_2.get_fee())
+
+print()
+# 학비 인상(클래스 메소드 미사용)
+Student.tuition_per = 1.2
+
+# 학비 정보(등록금 인상 후)
+print(student_1.get_fee_culc())
+print(student_2.get_fee_culc())
