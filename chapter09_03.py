@@ -114,3 +114,52 @@ word_list.close()
 # 아 그리고 20분 고민한 듯, word_jang["word_jang_keys[random_numbers]"]
 # 이렇게 했는데 안되서 한참 고민했는데 "" 없애니까 되네...
 # 이유는 word_jang_keys[random_numbers] 이게 나올 때 "어쩌구"로 나올 듯?
+
+# 2019-11-27 채점결과
+"""
+키 값을 접근하는 건 방법은 맞습니다^^
+그런데 "word_jang_keys[random_number]" 와 같이 쓴다면 이것은 문자열입니다.
+word_jang 에 "word_jang_keys[random_number]" 라는 key 가 있어야 하는 것이죠.
+word_jang_keys[random_number] 라고 쓴 이유는 key로만 이루어진 리스트의 인덱스를
+활용하기 위함이므로 변수의 쓰임 형태인 word_jang_keys[random_number]
+이렇게만 써주셔야 할 것입니다^^
+"""
+
+# 정답은?
+"""
+from random import randint
+
+# 파일 열기
+in_file = opne('vocabulary.txt', 'r')
+
+# 사전 만들기
+vocab = {}
+
+for line in_file:
+    # 정보 정리
+    data = line.strip().split(" ")
+    english_word = data[0]
+    korean_word = data[1]
+
+    # 사전에 추가
+    vocab[english_word] = korean_word
+
+while True:
+    keys = list(vocab.keys())
+    index = randint(0, len(keys) - 1)
+    english_word = keys[index]
+    korean_word = vocab(english_word)
+
+    # 유저 입력값 받기
+    guess = input("{}: ".format(korean_word))
+
+    # 정답 확인
+    if guess == english_word:
+        print("정답입니다!\n")
+    else:
+        print("아쉽습니다. 정답은 {}입니다.\n".format(english_word))
+
+# 파일 닫기
+in_file.close()
+
+"""

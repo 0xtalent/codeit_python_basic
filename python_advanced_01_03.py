@@ -23,24 +23,24 @@ class Student(object):
         self._tuition = tuition
         self._gpa = gpa
 
-        # Instance Method
-        def full_name(self):
-            return '{}, {}.format'(self._first_name, self._last_name)
+    # Instance Method
+    def full_name(self):
+        return '{}, {}'.format(self._first_name, self._last_name)
 
-        # Instance Method
-        def detail_info(self):
-            return 'Student Detail Info : {}, {}, {}, {}, {}, {}'.format(self._id, self.full_name(), self._email, self._grade, self._tuition, self._gpa)
+    # Instance Method
+    def detail_info(self):
+        return 'Student Detail Info : {}, {}, {}, {}, {}, {}'.format(self._id, self.full_name(), self._email, self._grade, self._tuition, self._gpa)
 
-        # Instance Method
-        def get_fee(self):
-            return 'Before Tuition -> ID : {}, fee : {}'.format(self._id, self._tuition)
+    # Instance Method
+    def get_fee(self):
+        return 'Before Tuition -> ID : {}, fee : {}'.format(self._id, self._tuition)
 
-        # Instance Method
-        def get_fee_culc(Self):
-            return 'After Tuition -> ID : {}, fee : {}'.format(self._id, self._tuition * Student.tuition)
+    # Instance Method
+    def get_fee_culc(Self):
+        return 'After Tuition -> ID : {}, fee : {}'.format(self._id, self._tuition * Student.tuition)
 
-        def __str__(self):
-            return 'Student Info -> name: {} grade: {} email: {}'.format(self.full_name(), self._grade, self._email)
+    def __str__(self):
+        return 'Student Info -> name: {} grade: {} email: {}'.format(self.full_name(), self._grade, self._email)
 
 student_1 = Student(1, 'Kim', 'Sarang', 'student1@naver.com', '1', 400, 3.5)
 student_2 = Student(2, 'Lee', 'Myungho', 'student2@naver.com', '2', 500, 4.3)
