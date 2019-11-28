@@ -69,3 +69,65 @@ p5 = Point3(**temp_dict) # ** 아스타를 두개 붙이면 알아서 언패킹
 
 print('EX2-2 -', p1, p2, p3, p4, p5)
 print()
+
+# 사용
+print('EX3-1 -', p1[0] + p2[1]) # Index Error 주의
+print('EX3-2 -', p1.x + p2.y) # 클래스 변수 접근 방식
+
+# Unpacking
+x, y = p3
+
+print('EX3-3 -', x+y)
+
+# Rename 테스트
+print('EX3-4 -', p4)
+print()
+
+# 네임드 튜플에서 제공하는 메소드를 사용해보자
+
+temp = [52, 38]
+
+# _make() : 새로운 객체 생성
+p4 = Point1._make(temp)
+
+print('EX4-1 -', p4)
+
+# _fields : 필드 네임 확인
+
+print('EX4-2 -', p1._fields, p2._fields, p3._fields)
+
+# _asdict() : 정렬된 딕셔너리(OrderedDict)로 반환
+print('EX4-3 -', p1._asdict(), p4._asdict)
+
+# _replace() : 수정된 '새로운' 객체 반환
+print('EX4-4 -', p2._replace(y=100))
+print()
+
+# 실 사용 실습
+# 학생 전체 그룹 생성
+# 반 20명, 4개의 반 -> (A, B, C, D) 번호
+
+# 네임드 튜플 선언
+Classes = namedtuple('Classes', ['rank', 'number'])
+
+# 그룹 리스트 선언, 리스트 컴프리헨션, 지능형 리스트
+numbers = [str(n) for n in range(1, 21)]
+ranks = 'A B C D'.split()
+
+# List Comprehension
+students = [Classes(rank, number) for rank in ranks for number in numbers]
+print(students)
+print(len(students))
+print(students[20].rank)
+print()
+
+# 가독성이 좀 안 좋은 케이스
+students2 = [Classes(rank, number) for rank in 'A B C D'.split() for number in [str(n) for n in range(1, 21)]]
+print(students2)
+print(len(students2))
+print(students2[20].rank)
+print()
+
+# 출력
+for s in students:
+    print('EX7-1 -', s)
