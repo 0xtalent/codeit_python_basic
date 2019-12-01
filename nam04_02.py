@@ -44,8 +44,8 @@ hello = hi
 hello()
 print(type(hello))
 
-def add(a, b):
-    return a + b
+# def add(a, b):
+#     return a + b
 
 # 인자로 함수를 담기, 아 어려워ㅋㅋ
 def cal(func, a, b):
