@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>남박사의 파이썬으로 웹사이트 만들기</title>
+</head>
+<body>
+    <form action="/login" method="POST">
+        <input type="text" name="email" placeholder="이메일을 입력해주세요" required/>
+        <input type="password" name="password" placeholder="비밀번호 입력해주세요"/>
+        <input type="radio" name="country" value="korea" checked/>대한민국
+        <input type="radio" name="country" value="english"/>English
+        <input type="radio" name="country" value="china"/>中國
+
+        <input type="checkbox" name="lect" id="python">파이썬
+        <input type="checkbox" name="lect" id="c/c++">c/c++
+        <input type="checkbox" name="lect" id="java">자바
+        <input type="checkbox" name="lect" id="android">안드로이드
+
+        <input type="file" name="upload_file" id="image/*">
+
+        <select name="lect2">
+            <option value="python">파이썬</option>
+            <option value="c/c++">c/c++</option>
+            <option value="java">자바</option>
+        </select>
+
+        <br>
+        <textarea name="contents" id="" cols="70" rows="4" placeholder="내용을 써주세요"></textarea>
+        <br>
+        <input type="submit" value="개발자에게 보내기">
+    </form>
+</body>
+</html>
