@@ -105,3 +105,63 @@ print('EX4-3 -', 'one' in user_dict3)
 # print('EX4-4 -', user_dict3['three'])
 print('EX4-5 -', user_dict3.get('three'))
 print('EX4-6 -', 'three' in user_dict3)
+print()
+
+# imutable Dict
+
+from types import MappingProxyType
+
+d = {'key1': 'TEST1'}
+
+# Read Only
+d_frozen = MappingProxyType(d)
+
+print('EX5-1 -', d, id(d))
+print('EX5-2 -', d_frozen, id(d_frozen))
+print('EX5-3 -', d is d_frozen, d == d_frozen)
+print()
+
+# 수정 불가
+# d_frozen['key1] = 'TEST2'
+# 원본은 수정됨
+
+# Set 구조(FrozenSet이라는 것이 있다.)
+
+
+s1 = {'Apple', "orange", 'Apple', "Orange", 'Kiwi'}
+s2 = set(['Apple', "orange", 'Apple', "Orange", 'Kiwi'])
+s3 = {3}
+s4 = set() # {} 이렇게 하면 딕셔너리
+s5 = frozenset({'Apple', "orange", 'Apple', "Orange", 'Kiwi'})
+
+# 추가
+s1.add('Melon')
+
+# 추가 불가
+# s5.add('Melon')
+
+print('EX6-1 -', s1, type(s1))
+print('EX6-2 -', s2, type(s2))
+print('EX6-3 -', s3, type(s3))
+print('EX6-4 -', s4, type(s4))
+print('EX6-5 -', s5, type(s5))
+
+# 선언 최적화
+
+from dis import dis
+
+print('EX6-5 -')
+print(dis('{10}'))
+
+print('EX6-6 -')
+print(dis('set([10])'))
+
+print()
+print()
+
+# 지능형 집합(Comprehending Set)
+from unicodedata import name
+
+print('EX7-1 -')
+
+print({name(chr(i), '') for i in range(0,256)})
