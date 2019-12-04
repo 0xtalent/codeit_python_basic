@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>남박사의 파이썬으로 웹사이트 만들기</title>
+</head>
+<style>
+    img:hover {
+        -webkit-filter: blur(5px);
+        filter: blur(5px);
+    }
+</style>
+
+<body>
+<script src="http://code.jquery.com/jquery-3.4.1.slim.js"></script>
+
+<img src="C:\Users\hayong\Desktop\skeleton.jpg" width="200">
+
+<br>
+
+<textarea onkeyup="keyup(this);"></textarea>
+남은글자: <span id="r">100</span>
+<script>
+function keyup(elem) {
+    var l = elem.value.length;
+    var remain = 100 - l;
+    document.getElementById("r").innerHTML = remain;
+}
+</script>
+</body>
+</html>
