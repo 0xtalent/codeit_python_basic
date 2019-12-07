@@ -2,6 +2,7 @@
 # 2019-12-07 21:15
 
 # 콘솔 스마트 계산기 만들기 스마트-파이썬 기초, 계산기 로직, 리스트, 반복문
+import os
 
 opertor = ["+", "-", "*", "/", "="]
 
@@ -46,6 +47,11 @@ def string_caculator(user_input):
 
     return round(result, 4)
 
-user_input = input("계산식을 입력하세요> ")
-result = string_caculator(user_input)
-print("결과: {}".format(result))
+while True:
+    os.system("cls")
+    user_input = input("계산식을 입력하세요> ")
+    if user_input == "/exit":
+        break
+    result = string_caculator(user_input)
+    print("결과: {}".format(result))
+    os.system("pause")
