@@ -4,6 +4,7 @@
 # 숫자 야구게임 만들기(파이썬 기초, 랜덤 함수, 반복문, 조건문, 딕셔너리)
 
 import random
+import os
 
 numbers = []
 number = str(random.randint(0, 9))
@@ -12,6 +13,12 @@ for i in range(3):
     while number in numbers:
         number = str(random.randint(0, 9))
     numbers.append(number)
+
+os.system("cls")
+
+print("*" * 60)
+print("야구 게임을 시작합니다!!")
+print("*" * 60)
 
 count_strike = 0
 count_ball = 0
