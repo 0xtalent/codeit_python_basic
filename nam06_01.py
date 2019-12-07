@@ -4,11 +4,13 @@
 # 숫자맞추기 게임(파이썬 기초, 랜덤 함수, 반복문, 조건문)
 
 import random
+import os
 
 chance = 10
 count = 0
 
 number = random.randint(1, 99)
+os.system('cls')
 print("1부터 99까지의 숫자를 10번 안에 맞춰 보세요.")
 
 while count < chance:
