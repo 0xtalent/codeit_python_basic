@@ -3,8 +3,8 @@
 
 # 콘솔 스마트 계산기 만들기 스마트-파이썬 기초, 계산기 로직, 리스트, 반복문
 
+user_input = input("계산식을 입력하세요> ")
 opertor = ["+", "-", "*", "/", "="]
-user_input = "5656 + 51212 * 10"
 
 string_list = []
 lop = 0
@@ -23,4 +23,15 @@ for i, s in enumerate(user_input):
 
 # =은 임의로 넣은 거니까 마지막꺼 빼고 할당
 string_list = string_list[:-1]
-print(string_list)
+
+pos = 0
+while True:
+    if pos + 1 > len(string_list):
+        break
+    if len(string_list) > pos + 1 and string_list[pos] in opertor:
+        temp = string_list[pos-1] + string_list[pos] + string_list[pos+1]
+        del string_list[0:3]
+        string_list.insert(0, str(eval(temp)))
+        pos = 0
+    pos += 1
+    print(string_list)
