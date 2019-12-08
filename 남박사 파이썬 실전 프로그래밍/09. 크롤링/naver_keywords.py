@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 r = requests.get("https://www.naver.com")
-bs = BeautifulSoup(r.text, "html.parser")
+bs = BeautifulSoup(r.text, "lxml")
 
 # lists = bs.find_all("li", {"class": "ah_item"})
 
