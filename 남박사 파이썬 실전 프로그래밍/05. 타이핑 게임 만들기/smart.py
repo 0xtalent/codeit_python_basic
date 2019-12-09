@@ -75,7 +75,7 @@ for q in word_list:
             break
         if c == src[i]:
             correct += 1
-    tot_len = len(q)
+    tot_len = len(src)
     c = correct / tot_len * 100
     e = (tot_len - correct) / tot_len * 100
     speed = (correct / end_time) * 60
