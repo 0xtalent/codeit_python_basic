@@ -6,6 +6,5 @@ r = requests.get(url)
 bs = BeautifulSoup(r.text, "lxml")
 lists = bs.select("div.gnt_m_th > a")
 for li in lists:
-    print(li)
-
-#
+    href = li["href"]
+    print(href)
