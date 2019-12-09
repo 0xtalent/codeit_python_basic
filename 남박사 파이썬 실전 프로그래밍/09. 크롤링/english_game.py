@@ -24,8 +24,26 @@ def get_news():
         return contents.lower()
     return None
 
-news = get_news()
+def make_quiz(news):
+    # 정규식 이용하기
+    match_pattern = re.findall(r'\b[a-z]{4,15}\b', news)
+    # print(match_pattern)
 
-# 정규식 이용하기
-match_pattern = re.findall(r'\b[a-z]{4,15}\b', news)
-print(match_pattern)
+    frequency = {}
+    quiz_list = []
+
+    for word in match_pattern:
+        count = frequency.get(word, 0)
+        # 이 부분 쫌 어렵네 일단 pass
+        frequency[word] = count + 1
+
+    for word, count in frequency.items():
+        print(word, count)
+        if count > 1:
+            kor = ""
+            quiz_list.append({kor: word})
+
+    return quiz
+
+news = get_news()
+quiz = make_quiz(news)
