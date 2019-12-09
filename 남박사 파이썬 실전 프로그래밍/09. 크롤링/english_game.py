@@ -7,3 +7,5 @@ bs = BeautifulSoup(r.text, "lxml")
 lists = bs.select("div.gnt_m_th > a")
 for li in lists:
     print(li)
+
+#
