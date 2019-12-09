@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import re
 
 def get_news():
     url = "https://www.usatoday.com"
@@ -23,4 +24,8 @@ def get_news():
         return contents.lower()
     return None
 
-print(get_news())
+news = get_news()
+
+# 정규식 이용하기
+match_pattern = re.findall(r'\b[a-z]{4,15}\b', news)
+print(match_pattern)
