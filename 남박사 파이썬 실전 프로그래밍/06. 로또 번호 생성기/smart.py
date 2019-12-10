@@ -31,6 +31,7 @@ def make_lotto_number(**kwargs):
     else:
         lotto.extend(rand_number)
 
+    lotto.sort()
     return lotto
 
-print(make_lotto_number(include=[1, 2]))
+print(make_lotto_number(include=[5, 12]))
