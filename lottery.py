@@ -75,6 +75,7 @@ winning_numbers 로 주어질 경우 5등에 당첨이 되는 것이죠. 이를 
 이를 개선해보시고 제출 부탁드려요:)
 """
 
+'''
 # 재도전
 from random import randint
 
@@ -120,6 +121,57 @@ def check(numbers, winning_numbers):
     elif count_matching_numbers(numbers, winning_numbers) == 4:
         return 50000
     elif count_matching_numbers(numbers, winning_numbers) == 3:
+        return 5000
+    else:
+        return 0
+'''
+
+# 재재도전
+from random import randint
+
+# 무작위로 1 - 45 사이의 숫자 여섯개 뽑기
+def generate_numbers():
+    box = []
+    while len(box) < 6:
+        random_number = randint(1, 45)
+        while random_number in box:
+            random_number = randint(1, 45)
+        box.append(random_number)
+    return sorted(box)
+
+# generate_numbers를 이용해서 6개 숫자를 뽑고 보너스 숫자 1개 더 뽑기
+def draw_winning_numbers():
+    draw_numbers = generate_numbers()
+    while len(draw_numbers) < 7:
+        random_number = randint(1, 45)
+        while random_number in draw_numbers:
+            random_number = randint(1, 45)
+        draw_numbers.append(random_number)
+    return draw_numbers
+
+# 두 리스트에서 중복되는 숫자가 몇 개인지 구하기
+def count_matching_numbers(list1, list2):
+    matching_number = 0
+    for number1 in range(0, 6):
+        for number2 in range(0, 6):
+            if list1[number1] == list2[number2]:
+                matching_number += 1
+    return matching_number
+
+# 로또 등수 확인하기
+def check(numbers, winning_numbers):
+    count_check = count_matching_numbers(numbers, winning_numbers)
+    if count_check == 6:
+        return 1000000000
+    elif count_check == 5:
+        for k in range(0, 6):
+            if numbers[k]== winning_numbers[6]:
+                return 50000000
+    elif count_check == 5:
+        return 1000000
+    elif count_check == 4:
+        return 50000
+    elif count_check == 3:
         return 5000
     else:
         return 0
