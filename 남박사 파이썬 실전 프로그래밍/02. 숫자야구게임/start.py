@@ -9,6 +9,7 @@ import os
 numbers = []
 number = str(random.randint(0, 9))
 
+# 012 인가요 123인가요
 for i in range(3):
     while number in numbers:
         number = str(random.randint(0, 9))

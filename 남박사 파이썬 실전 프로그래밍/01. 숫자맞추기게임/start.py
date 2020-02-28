@@ -7,6 +7,7 @@ import random
 import os
 
 
+# msg의 의미를 잘 모르겠어요
 def input_check(msg, casting=int):
     while True:
         try:
