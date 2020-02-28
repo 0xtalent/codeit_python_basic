@@ -32,7 +32,7 @@ while True:
 # else:
 #     print("소수가 아닙니다.")
 
-# 다른 방식
+# 다른 방식: 에라토스테네스의 체
 prime_list = [False, False] + [True] * (num - 1)
 primes = []
 
