@@ -19,8 +19,10 @@ response = requests.get("https://www.naver.com")
 # print(response.status_code)
 # print(response.headers)
 # print(response.text)
+# response.content는 디코딩 되기 전인 바이너리 형태의 데이터고
+# 디코딩이 된 상태의 데이터는 text로 접근할 수 있습니다.
 
-# bs = BeautifulSoup(response.text, "html.parser")
+# bs = BeautifulSoup(response.text, "html.parser") # 요 텍스트 데이타를 html.parser를 통해 html텍스트를 분석해준다.
 # for img in bs.select("img"):
 #     print(img)
 
