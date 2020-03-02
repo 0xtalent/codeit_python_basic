@@ -4,6 +4,10 @@
 # 어려워서 5분 27초 까지만
 
 import telepot
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 TELEGRAM_TOKEN = "1005159877:AAG-JbJX2OqeTuY7X_EQryzE7Tjq-QPa8vw"
 
@@ -34,8 +38,13 @@ def handler(msg):
 
             if command == "/dir":
                 filepath = " ".join(args)
-                filelist = get_dir_list(filepath)
-                bot.sendMessage(chat_id, filelist)
+                if filepath.strip() == "":
+                    bot.sendMessage(chat_id, "/dir [대상폴더] 로 입력해주세요.")
+
+
+                else:
+                    filelist = get_dir_list(filepath)
+                    bot.sendMessage(chat_id, filelist)
 
 
 bot = telepot.Bot(TELEGRAM_TOKEN)
