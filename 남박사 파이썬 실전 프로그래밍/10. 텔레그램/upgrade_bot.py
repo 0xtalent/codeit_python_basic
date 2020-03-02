@@ -27,12 +27,15 @@ def handler(msg):
 
     if content_type == "text":
         str_message = msg['text']
-        if str_message[0, 1] == "/":
+        if str_message[0:1] == "/":
             args = str_message.split(" ")
             command = args[0]
             del args[0]
 
             if command == "/dir":
+                filepath = " ".join(args)
+                filelist = get_dir_list(filepath)
+                bot.sendMessage(chat_id, filelist)
 
 
 bot = telepot.Bot(TELEGRAM_TOKEN)
