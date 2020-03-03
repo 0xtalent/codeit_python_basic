@@ -1,0 +1,16 @@
+# 200303 14:03
+
+import time
+
+def 주문받기():
+    for i in range(5):
+        print("주문받기 {}".format(i))
+        time.sleep(1)
+
+def 우편발송():
+    for i in range(5):
+        print("우편발송 {}".format(i))
+        time.sleep(0.5)
+
+주문받기()
+우편발송()
