@@ -15,6 +15,9 @@ class Performance:
 class SuperCar(CarMixIn, Performance):
     def show_info(self):
         print("{}는 {} 속도의 성능입니다.".format(self.name, self.speed))
+    def start(self):
+        super().start()
+        print("스타트")
 
 s = SuperCar("람보르기니", 300)
 s.show_info
