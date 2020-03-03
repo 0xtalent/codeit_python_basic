@@ -1,6 +1,7 @@
 # 200303 14:03
 
 import time
+import threading
 
 def 주문받기():
     for i in range(5):
@@ -12,5 +13,8 @@ def 우편발송():
         print("우편발송 {}".format(i))
         time.sleep(0.5)
 
-주문받기()
-우편발송()
+th1 = threading.Thread(target=주문받기)
+th2 = threading.Thread(target=우편발송)
+
+th1.start()
+th2.start()
