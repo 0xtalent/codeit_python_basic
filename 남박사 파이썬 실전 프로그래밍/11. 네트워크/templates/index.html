@@ -16,7 +16,7 @@
         var form = $("form").on("submit", function(e) {
             e.preventDefault();
             var nickname = $("input.nickname").val();
-            var nickname = $("input.message").val();
+            var message = $("input.message").val();
 
             socket.emit("chat", {
                 nickname: nickname,
@@ -27,7 +27,7 @@
     });
 
     socket.on("response", function(msg) {
-        $("div.messages").append("<div><b style='color:blue'>" + msg.nickname + "</b> " + msg.message + "</div");
+        $("div.messages").append("<div><b style='color:blue'>" + msg.nickname + "</b> " + msg.message + "</div>");
     });
 
 </script>
