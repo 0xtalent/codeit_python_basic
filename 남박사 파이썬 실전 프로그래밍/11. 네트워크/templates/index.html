@@ -1,3 +1,4 @@
+<div class="messages"></div>
 <form>
     <input type="text" class="nickname">
     <input type="text" class="message">
@@ -6,4 +7,27 @@
 </form>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.4/socket.io.min.js"></script>
 <script src="http://code.jquery.com/jquery-2.2.4.js"></script>
+<script type="text/javascript">
+    var socket = io.connect("http://" + document.domain + ":" + location.port);
 
+    socket.on("connect", function() {
+        socket.emit("connected");
+
+        var form = $("form").on("submit", function(e) {
+            e.preventDefault();
+            var nickname = $("input.nickname").val();
+            var nickname = $("input.message").val();
+
+            socket.emit("chat", {
+                nickname: nickname,
+                message: message
+            });
+            
+        });
+    });
+
+    socket.on("response", function(msg) {
+        $("div.messages").append("<div><b style='color:blue'>" + msg.nickname + "</b> " + msg.message + "</div");
+    });
+
+</script>
